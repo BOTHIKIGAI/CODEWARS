@@ -43,16 +43,20 @@ def solution(n):
         'M': 1000
     }
     n_str = str(n)
-    while len(n_str) != 0:
-        for simbol, value in ROMAN_NUMERALS.items():
-            num = n_str[0].ljust(len(n_str), '0')
-            if int(num) >= value:
-                print("Si soy menor o igual a", simbol)
-            n_str = n_str[:0] + n_str[0 + 1:]
-        break
-            
-        
-        
+    len_n_str = len(n_str)
+    num_div = []
+    for part in n_str:
+        num = part.ljust((len_n_str), '0')
+        len_n_str -= 1 
+        num_div.append(num)
+    print(num_div)
+    print("------")
+    for num in num_div:
+        if not int(num):
+            pass
+        else:
+            print(num)
+    
 
 solution(1)
 solution(5)
@@ -61,3 +65,13 @@ solution(50)
 solution(100)
 solution(500)
 solution(1000)
+
+solution(3)
+solution(8)
+solution(16)
+solution(78)
+solution(236)
+solution(119)
+solution(802)
+solution(1354)
+solution(2354)
